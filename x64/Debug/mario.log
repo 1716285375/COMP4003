@@ -1,0 +1,16 @@
+﻿  GameEngine.cpp
+  Scene_Play.cpp
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,43): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,43): warning C4244:         with
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,43): warning C4244:         [
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,43): warning C4244:             T=unsigned int
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,43): warning C4244:         ]
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,39): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,39): warning C4244:         with
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,39): warning C4244:         [
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,39): warning C4244:             T=unsigned int
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(109,39): warning C4244:         ]
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(419,15): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\PROJECT\VisualStudio2022\Game\Game_Engine\mario\Scene_Play.cpp(426,39): warning C4244: “参数”: 从“size_t”转换到“float”，可能丢失数据
+  正在生成代码...
+  mario.vcxproj -> D:\PROJECT\VisualStudio2022\Game\Game_Engine\x64\Debug\mario.exe
