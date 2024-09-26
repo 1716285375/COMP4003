@@ -23,7 +23,8 @@ protected:
     bool m_drawTextures = true;
     bool m_drawCollision = false;
     bool m_drawGrid = false;
-    const vec2 m_gridSize = {16, 16};
+    const vec2 m_gridSize = {18, 18};
+    const vec2 m_mapSize = { 18 * 100, 18 * 60 };
     sf::Text m_gridText;
     // Physics m_worldPhysics;
 
@@ -51,9 +52,11 @@ protected:
 
     void onEnd() override;
 
-//    void changePlayerStateTo(PlayerState s);
-//    void spawnCoinSpin(std::shared_ptr<Entity> tile);
-//    void spawnBrickDebris(std::shared_ptr<Entity> tile);
+    void changePlayerStateTo(const std::string& state);
+	void spawnCoinSpin(std::shared_ptr<Entity> tile);
+	void spawnBrickDebris(std::shared_ptr<Entity> tile);
+
+    void drawTitle(std::string level);
 
 public:
     Scene_Play(GameEngine *gameEngine, const std::string &levelPath);

@@ -18,8 +18,9 @@ protected:
     sf::Text m_menuText;
     std::vector<sf::Text> m_menuItems;
 
-    std::vector<std::string> m_levelPaths;
     size_t m_selectedMenuIndex = 0;
+
+    // custom variable
 
     void init();
 
@@ -29,32 +30,16 @@ protected:
 
     void sDoAction(const Action &action) override;
 
+    // custom implement
+
 public:
     explicit Scene_Menu(GameEngine *gameEngine = nullptr);
 
     void sRender() override;
 
-    void setLevel(size_t index)
-    {
-        m_selectedMenuIndex = index;
 
-    }
 
-    size_t getLevelIndex(std::string levelPath)
-    {
-        auto index = 0;
-		for ( auto i = 0; i < m_levelPaths.size(); ++i)
-		{
-            if (m_levelPaths[i] == levelPath)
-            {
-                index = i;
-                break;
-            }
-
-		}
-
-        return index;
-    }
+    // custom implement
 };
 
 #endif //SCENE_MENU_H

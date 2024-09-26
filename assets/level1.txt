@@ -222,4 +222,4 @@ Tile Block 62 3
 Tile Block 62 4
 Tile Block 62 5
 
-Player 108 44 48 24 5 -20 20 0.75 Buster
+Player 6 15 24 24 2 12 20 0.75 Buster

@@ -63,7 +63,7 @@ public:
     }
 
     template<class T>
-    void removeComponent() const {
+    void removeComponent() {
         getComponent<T>() = T();
     }
 };

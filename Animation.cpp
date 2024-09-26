@@ -21,13 +21,14 @@ Animation::Animation(std::string name, const sf::Texture &t, size_t frameCount, 
 void Animation::update() {
     // add the speed variable to the current frame
     m_currentFrame ++;
-    if (m_currentFrame % m_speed == 0)
-    {
-        m_sprite.setTextureRect(sf::IntRect(
-            m_size.x * (m_currentFrame / m_speed % m_frameCount), 0,
-            -m_size.x, m_size.y));
-    }
-
+    //std::cout << m_currentFrame << std::endl;
+    size_t frame;
+	if (m_speed == 0)
+		frame = 0;
+    else
+        frame = m_currentFrame / m_speed % m_frameCount;
+    //std::cout << "animation-frame: " << frame << std::endl;
+    m_sprite.setTextureRect(sf::IntRect(int(frame) * int(m_size.x), 0, int(m_size.x), int(m_size.y)));
 
     //std::cout << "animation: " << m_size.x * (m_currentFrame / m_speed % m_frameCount) << std::endl;
     
@@ -38,7 +39,9 @@ void Animation::update() {
 
 bool Animation::hasEnded() const {
     // TODO: detect when animation has ended (last frame waw played) and return true
-    return false;
+    if (m_speed == 0)
+        return true;
+    return (m_currentFrame / m_speed) % m_frameCount == m_frameCount - 1;
 }
 
 const vec2 &Animation::getSize() const {

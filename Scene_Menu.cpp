@@ -3,6 +3,7 @@
 #include "SFML/Window/Event.hpp"
 #include "Scene_Menu.h"
 #include "Scene_Play.h"
+#include "Scene_Level.h"
 #include "Physics.h"
 #include "Assets.h"
 #include "GameEngine.h"
@@ -20,24 +21,30 @@ void Scene_Menu::init() {
     registerAction(sf::Keyboard::Enter, "PLAY");
     registerAction(sf::Keyboard::Escape, "QUIT");
 
-    m_title = "Lunatics";
-    int titleSize = 30;
+    m_title = "MEGMAN VS MARIO";
+    int titleSize = 45;
+    int titleDistance = 50;
 
     m_menuText.setString(m_title);
     m_menuText.setFont(m_game->assets().getFont("Mario"));
     m_menuText.setCharacterSize(titleSize);
-    m_menuText.setFillColor(sf::Color::Black);
+    m_menuText.setFillColor(sf::Color(41, 95, 152));
     m_menuText.setPosition(
             float(m_game->window().getSize().x) / 2.0f - float(titleSize * (m_title.length() + 1)) / 2.0f,
-            float(titleSize * 3)
+            float(titleDistance * 3)
     );
     
     //std::cout << m_menuText.getGlobalBounds().top << std::endl;
     //std::cout << titleSize * 3 << std::endl;
 
-    m_menuStrings.emplace_back("LEVEL 1");
-    m_menuStrings.emplace_back("LEVEL 2");
-    m_menuStrings.emplace_back("LEVEL 3");
+    std::cout << m_menuText.getPosition().x << " " << m_menuText.getPosition().y << std::endl;
+
+    m_menuStrings.emplace_back("PLAY");
+    m_menuStrings.emplace_back("LEVEL EDIT");
+    m_menuStrings.emplace_back("SETTING");
+    m_menuStrings.emplace_back("ABOUT");
+
+    float textGap = 45.0;
 
     for (int i = 0; i < m_menuStrings.size(); i++) {
         sf::Text text(m_menuStrings[i], m_game->assets().getFont("Mario"), 26);
@@ -46,14 +53,12 @@ void Scene_Menu::init() {
         }
         text.setPosition(
                 float(m_game->window().getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
-                m_menuText.getGlobalBounds().top + 10.0f + 30.0f * float(i + 1)
+                m_menuText.getGlobalBounds().top + height() / 10 + textGap * float(i + 1)
         );
         m_menuItems.push_back(text);
-    }
 
-    m_levelPaths.emplace_back("./assets/level1.txt");
-    m_levelPaths.emplace_back("./assets/level2.txt");
-    m_levelPaths.emplace_back("./assets/level3.txt");
+        std::cout << "| " << text.getPosition().x << " | " << text.getPosition().y << " |" << std::endl;
+    }
 }
 
 void Scene_Menu::update() {
@@ -66,7 +71,7 @@ void Scene_Menu::onEnd() {
 }
 
 void Scene_Menu::sDoAction(const Action &action) {
-    std::cout << "MENU_ACTION " << action.type() << std::endl;
+    //std::cout << "MENU_ACTION " << action.type() << std::endl;
     if (action.type() == "START") {
         if (action.name() == "UP") {
             if (m_selectedMenuIndex > 0) {
@@ -77,7 +82,12 @@ void Scene_Menu::sDoAction(const Action &action) {
         } else if (action.name() == "DOWN") {
             m_selectedMenuIndex = (m_selectedMenuIndex + 1) % m_menuStrings.size();
         } else if (action.name() == "PLAY") {
-            m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game, m_levelPaths[m_selectedMenuIndex]));
+            if (m_menuStrings[m_selectedMenuIndex] == "PLAY")
+                m_game->changeScene("PLAY", std::make_shared<Scene_Level>(m_game));
+            if (m_menuStrings[m_selectedMenuIndex] == "LEVEL EDIT");
+            if (m_menuStrings[m_selectedMenuIndex] == "SETTING");
+            if (m_menuStrings[m_selectedMenuIndex] == "ABOUT");
+
         } else if (action.name() == "QUIT") {
             onEnd();
         }
@@ -100,33 +110,33 @@ void Scene_Menu::sDoAction(const Action &action) {
 }
 
 void Scene_Menu::sRender() {
-    // set menu background
-    m_game->window().clear(sf::Color(100, 100, 255));
 
-    // draw title
-    m_game->window().draw(m_menuText);
+	// set menu background
+	m_game->window().clear(sf::Color(71, 78, 104));
 
-    // draw menu items
-    for (int i = 0; i < m_menuStrings.size(); i++) {
-        if (i != m_selectedMenuIndex) {
-            m_menuItems[i].setFillColor(sf::Color::Black);
-        } else {
-            m_menuItems[i].setFillColor(sf::Color::White);
-        }
+	// draw title
+	m_game->window().draw(m_menuText);
 
-        m_menuItems[i].setPosition(
-                float(m_game->window().getSize().x) / 2.0f - float(26 * (m_menuStrings[i].length() + 1)) / 2.0f,
-                m_menuText.getGlobalBounds().top + 10.0f + 30.0f * float(i + 1)
-        );
-        m_game->window().draw(m_menuItems[i]);
-    }
+	// draw menu items
+	for (int i = 0; i < m_menuStrings.size(); i++) {
+		if (i != m_selectedMenuIndex) {
+			m_menuItems[i].setFillColor(sf::Color::Black);
+		}
+		else {
+			m_menuItems[i].setFillColor(sf::Color::White);
+		}
 
-    // draw help
-    sf::Text help("W:UP  S:DOWN  D:PLAY  ESC:BACK/QUIT", m_game->assets().getFont("Mario"), 26);
-    help.setFillColor(sf::Color::Black);
-    help.setPosition(
-            float(m_game->window().getSize().x) / 2.0f - float(26 * (help.getString().getSize() + 1)) / 2.0f,
-            float(m_game->window().getSize().y) - 30.0f * 2.0f
-    );
-    m_game->window().draw(help);
+		m_game->window().draw(m_menuItems[i]);
+	}
+
+	// draw help
+	sf::Text help("W:UP  S:DOWN  ENTER:PLAY  ESC:BACK/QUIT", m_game->assets().getFont("Mario"), 26);
+	help.setFillColor(sf::Color::Black);
+	help.setPosition(
+		float(m_game->window().getSize().x) / 2.0f - float(26 * (help.getString().getSize() + 1)) / 2.0f,
+		float(m_game->window().getSize().y) - 35.0f * 2.0f
+	);
+	m_game->window().draw(help);
+ 
 }
+

@@ -51,6 +51,9 @@
     <ClInclude Include="Components.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Scene_Level.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp">
@@ -92,5 +95,27 @@
     <ClCompile Include="Components.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Scene_Level.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assert.py">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="level.py">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="assets\map.json">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="assert.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="assets\level_1.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>

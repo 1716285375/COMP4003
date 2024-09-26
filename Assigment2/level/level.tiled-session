@@ -1,0 +1,159 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "mario/bg-1-3.tsx",
+    "expandedProjectPaths": [
+        "mario",
+        "."
+    ],
+    "fileStates": {
+        "bg.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "items-objects.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "map.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 638,
+                "y": 331.99999999999994
+            }
+        },
+        "mario/bg-1-1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/bg-1-3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/level1.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 589.5,
+                "y": 646
+            }
+        },
+        "mario/mario_brick.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_ground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain4.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain5.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_mountain6.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe4.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_connect1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_connect2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_hori1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_hori2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_hori3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mario/mario_pipe_hori4.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "misc-4.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.externalTilesetPath": "D:/PROJECT/VisualStudio2022/Game/Game_Engine/sfml-demo/level",
+    "last.imagePath": "D:/PROJECT/GameDev/Assert/超级马里奥/neo",
+    "map.height": 45,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 80,
+    "openFiles": [
+        "mario/level1.tmx",
+        "mario/mario_mountain3.tsx",
+        "mario/mario_mountain4.tsx",
+        "mario/mario_mountain5.tsx",
+        "mario/mario_mountain6.tsx",
+        "mario/mario_mountain1.tsx",
+        "mario/mario_mountain2.tsx",
+        "mario/bg-1-3.tsx"
+    ],
+    "project": "level.tiled-project",
+    "recentFiles": [
+        "mario/level1.tmx",
+        "mario/mario_mountain3.tsx",
+        "mario/mario_mountain4.tsx",
+        "mario/mario_mountain5.tsx",
+        "mario/mario_mountain6.tsx",
+        "mario/mario_mountain1.tsx",
+        "mario/mario_mountain2.tsx",
+        "mario/bg-1-3.tsx",
+        "mario/bg-1-1.tsx",
+        "mario/mario_pipe1.tsx",
+        "mario/mario_pipe4.tsx",
+        "mario/mario_pipe3.tsx"
+    ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

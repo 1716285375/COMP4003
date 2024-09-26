@@ -1,0 +1,2 @@
+Textture	TexStand	images/role/
+Textture	Tex...		relative path

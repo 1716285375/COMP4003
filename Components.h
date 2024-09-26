@@ -82,11 +82,14 @@ public:
 
 class CState : public Component {
 public:
-    std::string state = "jumping";
+    std::string state = "";
+    std::string prevState = "";
+
+    bool changeAnimation = false;
 
     CState() = default;
 
-    explicit CState(std::string s) : state(std::move(s)) {}
+    explicit CState(std::string s) : state(std::move(s)), prevState(state) {}
 };
 
 #endif //COMPONENTS_H
